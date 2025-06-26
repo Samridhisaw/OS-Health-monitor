@@ -1,0 +1,385 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #222;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header {
+    background: linear-gradient(90deg, #1976d2 0%, #26c6da 100%);
+    color: #fff;
+    padding: 32px 0 16px 0;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+.subtitle {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: #e0f7fa;
+}
+
+.main-footer {
+    background: #1976d2;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+.dashboard {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+h1, h2, h3 {
+    color: #1976d2;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.chart-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin: 24px 0;
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
+    padding: 18px 0;
+}
+
+.chart-wrapper {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f8fafc 100%);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 4px 24px rgba(25, 118, 210, 0.13);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.chart-wrapper:hover {
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+    transform: translateY(-4px) scale(1.03);
+}
+.chart-label {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    color: #1976d2;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.process-section {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.process-list {
+    flex: 1 1 300px;
+}
+
+.scheduling-comparison {
+    flex: 2 1 500px;
+}
+
+.algorithm-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 12px;
+}
+.algorithm h4 {
+    color: #1976d2;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.algorithm {
+    background: #e3f2fd;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(25, 118, 210, 0.06);
+    transition: box-shadow 0.2s;
+}
+.algorithm:hover {
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 15px;
+}
+li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .chart-wrapper {
+        width: 100%;
+        height: 220px;
+    }
+    .chart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .process-section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header h1 {
+        font-size: 1.5rem;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .dashboard {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    .card, .chart-section {
+        padding: 12px;
+    }
+}
+
+.user-service-section {
+    margin-bottom: 32px;
+    background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 16px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+}
+.user-service-section h2 {
+    text-shadow: 2px 2px 8px #000a, 0 1px 0 #1976d2;
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+#serviceForm {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+#serviceInput {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+}
+#serviceInput:focus {
+    outline: 2px solid #26c6da;
+}
+#serviceForm button {
+    background: #26c6da;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#serviceForm button:hover {
+    background: #1976d2;
+}
+.service-response-visual {
+    min-height: 60px;
+    margin-bottom: 18px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(25, 118, 210, 0.18);
+    padding: 18px;
+    color: #fff;
+    font-size: 1.15rem;
+    text-shadow: 1px 1px 8px #000a, 0 1px 0 #1976d2;
+    transition: box-shadow 0.2s;
+    word-break: break-word;
+}
+.cinematic-media, .cinematic-gif, .cinematic-video {
+    display: none !important;
+}
+
+.scheduling-visual-section {
+    margin-bottom: 32px;
+    background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 16px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+}
+.scheduling-visual-section h2 {
+    text-shadow: 2px 2px 8px #000a, 0 1px 0 #1976d2;
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+#schedulingForm {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+#schedulingForm input[type="number"], #schedulingForm input[type="text"] {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+    margin: 0 6px 8px 0;
+    min-width: 120px;
+    background: #fff;
+    color: #232526;
+}
+#schedulingForm input[type="number"]:focus, #schedulingForm input[type="text"]:focus {
+    outline: 2px solid #26c6da;
+}
+#schedulingForm button {
+    background: #26c6da;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#schedulingForm button:hover {
+    background: #1976d2;
+}
+.scheduling-chart-area {
+    min-height: 80px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px 0 rgba(25, 118, 210, 0.18);
+    padding: 18px;
+    color: #fff;
+    font-size: 1.15rem;
+    text-shadow: 1px 1px 8px #000a, 0 1px 0 #1976d2;
+    transition: box-shadow 0.2s;
+    word-break: break-word;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.live-badge {
+    display: inline-block;
+    background: #26c6da;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 4px 14px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.13);
+    letter-spacing: 1px;
+}
+
+.process-inputs-enhanced {
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 10px 10px 0 10px;
+}
+.process-inputs-header {
+    display: flex;
+    gap: 8px;
+    font-weight: bold;
+    color: #1976d2;
+    margin-bottom: 4px;
+    font-size: 1.08rem;
+}
+.process-inputs-header span {
+    flex: 1 1 0;
+    text-align: center;
+}
+.process-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    background: rgba(255,255,255,0.13);
+    border-radius: 6px;
+    padding: 4px 0;
+}
+.process-row input[type="text"], .process-row input[type="number"] {
+    flex: 1 1 0;
+    text-align: center;
+    margin: 0;
+}
+.process-row .removeProcRow {
+    flex: 0 0 40px;
+    margin-left: 0;
+}
+.visual-divider {
+    border: none;
+    border-top: 2px solid #26c6da;
+    margin: 16px 0 10px 0;
+}
+.gantt-chart-area {
+    margin-top: 18px;
+    min-height: 40px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    color: #222;
+    font-size: 1.08rem;
+    overflow-x: auto;
+}

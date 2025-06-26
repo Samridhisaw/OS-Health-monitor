@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Health Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>OS Health Monitor</h1>
+            <p class="subtitle">Monitor & Simulate OS Scheduling and Resource Usage</p>
+        </div>
+    </header>
+    <main class="dashboard container">
+        <section class="user-service-section card">
+            <h2>Service Interaction</h2>
+            <form id="serviceForm">
+                <input type="text" id="serviceInput" placeholder="Enter service name or (disk/memory/ram/cpu) usage, os info, kernel, uptime, nginx, mysql..." required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="serviceResponse" class="service-response-visual"></div>
+        </section>
+        <section class="metrics-section card">
+            <h2>Live System Metrics</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper"><canvas id="cpuChart"></canvas><div class="chart-label">CPU Usage</div></div>
+                <div class="chart-wrapper"><canvas id="memoryChart"></canvas><div class="chart-label">Memory Usage</div></div>
+                <div class="chart-wrapper"><canvas id="diskChart"></canvas><div class="chart-label">Disk Usage</div></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-wrapper"><canvas id="cpuHistoryChart"></canvas><div class="chart-label">CPU History</div></div>
+                <div class="chart-wrapper"><canvas id="memoryHistoryChart"></canvas><div class="chart-label">Memory History</div></div>
+            </div>
+            <div class="process-section">
+                <div class="process-list">
+                    <h3>Top Processes</h3>
+                    <ul id="processList"></ul>
+                </div>
+                <div class="scheduling-comparison">
+                    <h3>Scheduling Comparison</h3>
+                    <div class="algorithm-container">
+                        <div class="algorithm"><h4>FCFS</h4><ul id="fcfsList"></ul></div>
+                        <div class="algorithm"><h4>SJF</h4><ul id="sjfList"></ul></div>
+                        <div class="algorithm"><h4>Priority</h4><ul id="priorityList"></ul></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="scheduling-visual-section card">
+            <h2>Scheduling Algorithm Visualization</h2>
+            <form id="schedulingForm">
+                <label for="algorithmSelect">Choose an algorithm:</label>
+                <select id="algorithmSelect" required>
+                    <option value="fcfs">Process: First Come First Serve (FCFS)</option>
+                    <option value="sjf">Process: Shortest Job First (SJF)</option>
+                    <option value="shortestjobfirst">Process: Shortest Job First (Alias)</option>
+                    <option value="shortesttaskfirst">Process: Shortest Task First (Alias)</option>
+                    <option value="priority">Process: Priority</option>
+                    <option value="roundrobin">Process: Round Robin</option>
+                    <option value="scan">Disk: SCAN</option>
+                    <option value="cscan">Disk: C-SCAN</option>
+                    <option value="look">Disk: LOOK</option>
+                </select>
+                <div class="process-inputs-enhanced">
+                    <div class="process-inputs-header">
+                        <span>Process Name</span>
+                        <span>Start Time</span>
+                        <span>End Time</span>
+                        <span>Remove</span>
+                    </div>
+                    <div id="processInputs">
+                        <div class="process-row">
+                            <input type="text" class="procName" placeholder="Process Name" required>
+                            <input type="number" class="procStart" placeholder="Start Time" min="0" step="1" required>
+                            <input type="number" class="procEnd" placeholder="End Time" min="0" step="1" required>
+                            <button type="button" class="removeProcRow" style="display:none;">&minus;</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addProcRow">+ Add Process</button>
+                </div>
+                <hr class="visual-divider">
+                <input type="number" id="timeQuantum" placeholder="Time Quantum" min="1" step="1" style="display:none;">
+                <input type="number" id="headPosition" placeholder="Head Start Position" style="display:none;">
+                <input type="text" id="diskRequests" placeholder="Disk Requests (comma-separated)" style="display:none;">
+                <button type="submit">Visualize</button>
+            </form>
+            <div id="schedulingChartArea" class="scheduling-chart-area"></div>
+            <div id="ganttChartArea" class="gantt-chart-area"></div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 OS Health Monitor | Designed for OS Scheduling & Resource Visualization</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
